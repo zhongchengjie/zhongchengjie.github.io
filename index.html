@@ -249,6 +249,622 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/null/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WWW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/26/null/" itemprop="url">js中的undefined与null</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T22:46:54+08:00">
+                2018-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="类型分析"><a href="#类型分析" class="headerlink" title="类型分析"></a>类型分析</h5><p>js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1;</span><br><span class="line"><span class="keyword">var</span> a2 = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> a3 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> a4 = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">var</span> a5 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> a6 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> a7 = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">var</span> a8 = <span class="literal">undefined</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> a);   <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a1);  <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a2);  <span class="comment">//显示"boolean"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a3);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a4);  <span class="comment">//显示"string"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a5);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a6);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a7);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a8);  <span class="comment">//显示"undefined"</span></span><br></pre></td></tr></table></figure></p>
+<p>从上面的代码中可以看出<strong>未定义的值和定义未赋值的为undefined</strong>，null是一种特殊的object,NaN是一种特殊的number。</p>
+<h5 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1;  <span class="comment">//a1的值为undefined</span></span><br><span class="line"><span class="keyword">var</span> a2 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> a3 = <span class="literal">NaN</span>;</span><br><span class="line">alert(a1 == a2);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a1 != a2);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a1 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a1 != a3);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a2 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a2 != a3);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a3 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a3 != a3);  <span class="comment">//显示"true"</span></span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以得出结论：</p>
+<ul>
+<li><strong>undefined与null是相等；</strong></li>
+<li><strong>NaN与任何值都不相等，与自己也不相等。</strong></li>
+</ul>
+<h5 id="undefined判断"><a href="#undefined判断" class="headerlink" title="undefined判断"></a>undefined判断</h5><p>用 === 运算或typeof来测试某个值是否是未定义的。<strong>undefined表示一个未声明的变量，或已声明但没有赋值的变量，或一个并不存在的对象属性</strong>。在本例中，我们将检测两个变量中未定义的一个：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t1=<span class="string">""</span></span><br><span class="line"><span class="keyword">var</span> t2</span><br><span class="line"><span class="keyword">if</span> (t1===<span class="literal">undefined</span>) &#123;<span class="built_in">document</span>.write(<span class="string">"t1 is undefined"</span>)&#125;</span><br><span class="line"><span class="keyword">if</span> (t2===<span class="literal">undefined</span>&amp;&amp;<span class="keyword">typeof</span>(t2)==<span class="string">"undefined"</span>) &#123;<span class="built_in">document</span>.write(<span class="string">"t2 is undefined"</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出：t2 is undefined</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/bind/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WWW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/26/bind/" itemprop="url">call、apply和bind使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T22:44:06+08:00">
+                2018-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h5><ul>
+<li>obj.call(thisObj, arg1, arg2, …);</li>
+<li>obj.apply(thisObj, [arg1, arg2, …]);</li>
+</ul>
+<p>两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj继承了obj的属性和方法。绑定后会立即执行函数。<strong>唯一区别是apply接受的是数组参数，call接受的是连续参数</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">j, k</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> j+k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">j, k</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> j-k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">5</span>,<span class="number">3</span>); <span class="comment">//8</span></span><br><span class="line">add.call(sub, <span class="number">5</span>, <span class="number">3</span>); <span class="comment">//8</span></span><br><span class="line">add.apply(sub, [<span class="number">5</span>, <span class="number">3</span>]); <span class="comment">//8</span></span><br><span class="line"></span><br><span class="line">sub(<span class="number">5</span>, <span class="number">3</span>); <span class="comment">//2</span></span><br><span class="line">sub.call(add, <span class="number">5</span>, <span class="number">3</span>); <span class="comment">//2</span></span><br><span class="line">sub.apply(add, [<span class="number">5</span>, <span class="number">3</span>]); <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="调用原生对象的方法"><a href="#调用原生对象的方法" class="headerlink" title="调用原生对象的方法"></a>调用原生对象的方法</h5><p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="number">0</span>:<span class="number">1</span>, <span class="number">1</span>:<span class="string">"yjc"</span>, <span class="attr">length</span>: <span class="number">2</span>&#125;;</span><br><span class="line">a.slice(); <span class="comment">//TypeError: a.slice is not a function</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call(a);<span class="comment">//[1, "yjc"]</span></span><br></pre></td></tr></table></figure></p>
+<p>对象a类似array，但不具备array的slice等方法。使用call绑定，这时候就可以调用slice方法。</p>
+<h5 id="实现继承"><a href="#实现继承" class="headerlink" title="实现继承"></a>实现继承</h5><p>通过call和apply，我们可以实现对象继承。示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Parent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"yjc"</span>;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">22</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> child = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(child);<span class="comment">//Object &#123;&#125; ,空对象</span></span><br><span class="line">Parent.call(child);</span><br><span class="line"><span class="built_in">console</span>.log(child); <span class="comment">//Object &#123;name: "yjc", age: 22&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>以上实现了对象的继承。</p>
+<h5 id="bind的使用"><a href="#bind的使用" class="headerlink" title="bind的使用"></a>bind的使用</h5><p>obj.bind(thisObj, arg1, arg2, …);</p>
+<p>把obj绑定到thisObj，这时候thisObj具备了obj的属性和方法。<strong>与call和apply不同的是，bind绑定后不会立即执行</strong>。</p>
+<p>同样是add()和sub()：</p>
+<p>add.bind(sub, 5, 3); //不再返回8</p>
+<p>add.bind(sub, 5, 3)(); //8</p>
+<p>如果bind的第一个参数是null或者undefined，等于将this绑定到全局对象。</p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/jsdate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WWW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/26/jsdate/" itemprop="url">javasript日期操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T22:29:19+08:00">
+                2018-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h5><ul>
+<li>var myDate = new Date();//获取日期对象</li>
+<li>myDate.getFullYear(); //获取完整的年份(4位,1970-????)</li>
+<li>myDate.getMonth(); //获取当前月份(0-11,0代表1月)</li>
+<li>myDate.getDate(); //获取当前日(1-31)</li>
+<li>myDate.getDay(); //获取当前星期X(0-6,0代表星期天)</li>
+<li>myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)</li>
+<li>myDate.getHours(); //获取当前小时数(0-23)</li>
+<li>myDate.getMinutes(); //获取当前分钟数(0-59)</li>
+<li>myDate.getSeconds(); //获取当前秒数(0-59)</li>
+<li>myDate.getMilliseconds(); //获取当前毫秒数(0-999)</li>
+<li>myDate.toLocaleDateString(); //获取当前日期(字符串格式，如：2017/11/16)</li>
+<li>myDate.toLocaleTimeString(); //获取当前时间(字符串格式，如：下午4:59:16)</li>
+<li>myDate.toLocaleString( ); //获取日期与时间(字符串格式，如：2017/11/16 下午4:59:45)</li>
+</ul>
+<h5 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//格式化方法</span></span><br><span class="line"><span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span>(<span class="params">format</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = &#123;</span><br><span class="line">        <span class="string">"M+"</span>: <span class="keyword">this</span>.getMonth() + <span class="number">1</span>, <span class="comment">//month</span></span><br><span class="line">        <span class="string">"d+"</span>: <span class="keyword">this</span>.getDate(),    <span class="comment">//day</span></span><br><span class="line">        <span class="string">"H+"</span>: <span class="keyword">this</span>.getHours(),   <span class="comment">//hour</span></span><br><span class="line">        <span class="string">"m+"</span>: <span class="keyword">this</span>.getMinutes(), <span class="comment">//minute</span></span><br><span class="line">        <span class="string">"s+"</span>: <span class="keyword">this</span>.getSeconds(), <span class="comment">//second</span></span><br><span class="line">        <span class="string">"q+"</span>: <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth() + <span class="number">3</span>) / <span class="number">3</span>),  <span class="comment">//quarter</span></span><br><span class="line">        <span class="string">"S"</span>: <span class="keyword">this</span>.getMilliseconds() <span class="comment">//millisecond</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(format)) format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>,</span><br><span class="line">    (<span class="keyword">this</span>.getFullYear() + <span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> o)</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span> + k + <span class="string">")"</span>).test(format))</span><br><span class="line">        format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>,</span><br><span class="line">        <span class="built_in">RegExp</span>.$<span class="number">1.</span>length == <span class="number">1</span> ? o[k] :</span><br><span class="line">       (<span class="string">"00"</span> + o[k]).substr((<span class="string">""</span> + o[k]).length));</span><br><span class="line">    <span class="keyword">return</span> format;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> f = d.format(<span class="string">"yyyy-MM-dd"</span>); <span class="comment">//或d.format("yyyy-MM-dd HH:mm:ss");</span></span><br><span class="line"><span class="built_in">console</span>.log(f);</span><br></pre></td></tr></table></figure>
+<h5 id="日期时间字符串转Date对象"><a href="#日期时间字符串转Date对象" class="headerlink" title="日期时间字符串转Date对象"></a>日期时间字符串转Date对象</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateStr = <span class="string">'2015-03-30'</span>;    <span class="comment">//或var dateStr = '2015-03-30 12:12:09'</span></span><br><span class="line">dateStr = dateStr.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>);</span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(dateStr);</span><br><span class="line"><span class="built_in">console</span>.log(d);        <span class="comment">//输出 Mon Mar 30 2015 00:00:00 GMT+0800 (中国标准时间)</span></span><br></pre></td></tr></table></figure>
+<h5 id="获取某月的天数"><a href="#获取某月的天数" class="headerlink" title="获取某月的天数"></a>获取某月的天数</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//year传入年份，如：2015；month传入月份，范围：1-12</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDaysInMonth</span>(<span class="params">year,month</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dayCount;</span><br><span class="line">    now = <span class="keyword">new</span> <span class="built_in">Date</span>(year,month, <span class="number">0</span>);</span><br><span class="line">    dayCount = now.getDate();</span><br><span class="line">    <span class="keyword">return</span> dayCount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WWW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/26/git/" itemprop="url">git常用操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T21:14:07+08:00">
+                2018-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>Git是目前世界上最先进的分布式版本控制系统。</p>
+<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>从git官网中下载安装程序，然后按默认选项安装即可。</p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p>1.&nbsp;clone远程库项目到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://......</span><br><span class="line">//例如</span><br><span class="line">git clone https://github.com/zhongchengjie/my-demo.git</span><br></pre></td></tr></table></figure></p>
+<p>2.&nbsp;同步远程库项目到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master(分支用对应的分支名称代替master)</span><br></pre></td></tr></table></figure></p>
+<p>3.&nbsp;将本地的新项目上传到远程库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;提交的备注信息&quot;</span><br><span class="line">git remote add origin https://......</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p>4.&nbsp;提交本地库的更新到远程库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -a -m &quot;提交的备注信息&quot;</span><br><span class="line">git push origin master(分支用对应的分支名称代替master)</span><br></pre></td></tr></table></figure></p>
+<p>5.&nbsp;本地库创建分支并push到远程库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch branch1   （创建新分支，branch1是分支名称）</span><br><span class="line">git checkout branch1 （切换到分支）</span><br><span class="line">git push origin branch1（push到远程库）</span><br></pre></td></tr></table></figure></p>
+<p>6.&nbsp;强制更新远程库来覆盖本地库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master (分支用对应的分支名称代替master)</span><br></pre></td></tr></table></figure></p>
+<p>7.&nbsp;拉取远程库分支代码到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout origin/remoteName -b localName</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/22/css-triangle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -290,6 +906,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index">
+                    <span itemprop="name">html/css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -409,6 +1047,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css-css3/" itemprop="url" rel="index">
+                    <span itemprop="name">css/css3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -862,6 +1522,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html-css/" itemprop="url" rel="index">
+                    <span itemprop="name">html/css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1106,7 +1788,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1117,7 +1799,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1128,7 +1810,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

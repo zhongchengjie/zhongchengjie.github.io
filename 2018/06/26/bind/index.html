@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="npm,cnpm,nodejs," />
+  <meta name="keywords" content="call,apply,bind," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="npm简介npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。 npm常用命令1.安装插件：npm install  [-g] [–save-dev]  ：node插件名称。例：npm install gulp-less –save-dev -g：全局安装。将会安装在C:\Users\Administrator\AppDat">
-<meta name="keywords" content="npm,cnpm,nodejs">
+<meta name="description" content="call和apply obj.call(thisObj, arg1, arg2, …); obj.apply(thisObj, [arg1, arg2, …]);  两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj继承了obj的属性和方法。绑定后会立即执行函数。唯一区别是apply接受的是数组参数，call接受的是连续">
+<meta name="keywords" content="call,apply,bind">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm介绍">
-<meta property="og:url" content="http://yoursite.com/2018/06/21/npm/index.html">
+<meta property="og:title" content="call、apply和bind使用">
+<meta property="og:url" content="http://yoursite.com/2018/06/26/bind/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="npm简介npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。 npm常用命令1.安装插件：npm install  [-g] [–save-dev]  ：node插件名称。例：npm install gulp-less –save-dev -g：全局安装。将会安装在C:\Users\Administrator\AppDat">
+<meta property="og:description" content="call和apply obj.call(thisObj, arg1, arg2, …); obj.apply(thisObj, [arg1, arg2, …]);  两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj继承了obj的属性和方法。绑定后会立即执行函数。唯一区别是apply接受的是数组参数，call接受的是连续">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-21T03:24:33.209Z">
+<meta property="og:updated_time" content="2018-06-26T14:49:57.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm介绍">
-<meta name="twitter:description" content="npm简介npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。 npm常用命令1.安装插件：npm install  [-g] [–save-dev]  ：node插件名称。例：npm install gulp-less –save-dev -g：全局安装。将会安装在C:\Users\Administrator\AppDat">
+<meta name="twitter:title" content="call、apply和bind使用">
+<meta name="twitter:description" content="call和apply obj.call(thisObj, arg1, arg2, …); obj.apply(thisObj, [arg1, arg2, …]);  两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj继承了obj的属性和方法。绑定后会立即执行函数。唯一区别是apply接受的是数组参数，call接受的是连续">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/21/npm/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/26/bind/"/>
 
 
 
 
 
-  <title>npm介绍 | Hexo</title>
+  <title>call、apply和bind使用 | Hexo</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/npm/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/bind/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WWW">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">npm介绍</h1>
+          <h1 class="post-title" itemprop="name headline">call、apply和bind使用</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T10:53:45+08:00">
-                2018-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T22:44:06+08:00">
+                2018-06-26
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">nodejs</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -342,25 +342,22 @@
       
 
       
-        <h4 id="npm简介"><a href="#npm简介" class="headerlink" title="npm简介"></a>npm简介</h4><p>npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。</p>
-<h4 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h4><p>1.安装插件：<strong>npm install <name> [-g] [–save-dev]</name></strong></p>
-<ul>
-<li><name>：node插件名称。例：npm install gulp-less –save-dev</name></li>
-<li>-g：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用。</li>
-<li>–save：将保存配置信息至package.json（package.json是nodejs项目配置文件）</li>
-<li><p>-dev：保存至package.json的devDependencies（开发环境）节点，不指定-dev将保存至dependencies（生产环境）节点。</p>
-<p>为什么要保存至package.json？<strong>因为node插件包相对来说非常庞大，所以不加入版本管理，将配置信息写入package.json并将其加入版本管理，其他开发者对应下载即可（命令提示符执行npm install，则会根据package.json下载所有需要的包，npm install –production只下载dependencies节点的包）</strong></p>
-</li>
+        <h5 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h5><ul>
+<li>obj.call(thisObj, arg1, arg2, …);</li>
+<li>obj.apply(thisObj, [arg1, arg2, …]);</li>
 </ul>
-<p>2.卸载插件：<strong>npm uninstall <name> [-g] [–save-dev]</name></strong></p>
-<p>3.卸载全部插件：先安装rimraf：<strong>npm install rimraf -g</strong> &nbsp;&nbsp;用法：<strong>rimraf node_modules</strong></p>
-<p>4.更新插件：<strong>npm update <name> [-g] [–save-dev]</name></strong></p>
-<p>5.更新全部插件：<strong>npm update [–save-dev]</strong></p>
-<p>6.查看已安装的插件：<strong>npm list</strong></p>
-<p><strong>devDependencies节点下的模块是我们在开发时需要用的，比如项目中使用的gulp，压缩css、js的模块。这些模块在我们的项目部署后是不需要的，所以我们可以使用 -save-dev 的形式安装。像 express 这些模块是项目运行必备的，应该安装在 dependencies 节点下，所以我们应该使用 -save 的形式安装。</strong></p>
-<h4 id="cnpm简介"><a href="#cnpm简介" class="headerlink" title="cnpm简介"></a>cnpm简介</h4><p>因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常。<strong>cnpm是一个完整npmjs.org镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。</strong></p>
-<h4 id="cnpm安装"><a href="#cnpm安装" class="headerlink" title="cnpm安装"></a>cnpm安装</h4><p>安装命令：<strong>npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></strong></p>
-<p>检查是否安装成功：<strong>cnpm -v</strong></p>
+<p>两者作用一致，都是把obj(即this)绑定到thisObj，这时候thisObj具备了obj的属性和方法。或者说thisObj继承了obj的属性和方法。绑定后会立即执行函数。<strong>唯一区别是apply接受的是数组参数，call接受的是连续参数</strong>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">j, k</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> j+k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">j, k</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> j-k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">5</span>,<span class="number">3</span>); <span class="comment">//8</span></span><br><span class="line">add.call(sub, <span class="number">5</span>, <span class="number">3</span>); <span class="comment">//8</span></span><br><span class="line">add.apply(sub, [<span class="number">5</span>, <span class="number">3</span>]); <span class="comment">//8</span></span><br><span class="line"></span><br><span class="line">sub(<span class="number">5</span>, <span class="number">3</span>); <span class="comment">//2</span></span><br><span class="line">sub.call(add, <span class="number">5</span>, <span class="number">3</span>); <span class="comment">//2</span></span><br><span class="line">sub.apply(add, [<span class="number">5</span>, <span class="number">3</span>]); <span class="comment">//2</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="调用原生对象的方法"><a href="#调用原生对象的方法" class="headerlink" title="调用原生对象的方法"></a>调用原生对象的方法</h5><p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="number">0</span>:<span class="number">1</span>, <span class="number">1</span>:<span class="string">"yjc"</span>, <span class="attr">length</span>: <span class="number">2</span>&#125;;</span><br><span class="line">a.slice(); <span class="comment">//TypeError: a.slice is not a function</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call(a);<span class="comment">//[1, "yjc"]</span></span><br></pre></td></tr></table></figure></p>
+<p>对象a类似array，但不具备array的slice等方法。使用call绑定，这时候就可以调用slice方法。</p>
+<h5 id="实现继承"><a href="#实现继承" class="headerlink" title="实现继承"></a>实现继承</h5><p>通过call和apply，我们可以实现对象继承。示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Parent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"yjc"</span>;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">22</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> child = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(child);<span class="comment">//Object &#123;&#125; ,空对象</span></span><br><span class="line">Parent.call(child);</span><br><span class="line"><span class="built_in">console</span>.log(child); <span class="comment">//Object &#123;name: "yjc", age: 22&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>以上实现了对象的继承。</p>
+<h5 id="bind的使用"><a href="#bind的使用" class="headerlink" title="bind的使用"></a>bind的使用</h5><p>obj.bind(thisObj, arg1, arg2, …);</p>
+<p>把obj绑定到thisObj，这时候thisObj具备了obj的属性和方法。<strong>与call和apply不同的是，bind绑定后不会立即执行</strong>。</p>
+<p>同样是add()和sub()：</p>
+<p>add.bind(sub, 5, 3); //不再返回8</p>
+<p>add.bind(sub, 5, 3)(); //8</p>
+<p>如果bind的第一个参数是null或者undefined，等于将this绑定到全局对象。</p>
+<p>&nbsp;</p>
 
       
     </div>
@@ -378,11 +375,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/npm/" rel="tag"># npm</a>
+            <a href="/tags/call/" rel="tag"># call</a>
           
-            <a href="/tags/cnpm/" rel="tag"># cnpm</a>
+            <a href="/tags/apply/" rel="tag"># apply</a>
           
-            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+            <a href="/tags/bind/" rel="tag"># bind</a>
           
         </div>
       
@@ -395,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/20/flex/" rel="next" title="flex">
-                <i class="fa fa-chevron-left"></i> flex
+              <a href="/2018/06/26/jsdate/" rel="next" title="javasript日期操作">
+                <i class="fa fa-chevron-left"></i> javasript日期操作
               </a>
             
           </div>
@@ -405,8 +402,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/21/gulp/" rel="prev" title="gulp入门">
-                gulp入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/26/null/" rel="prev" title="js中的undefined与null">
+                js中的undefined与null <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -543,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#npm简介"><span class="nav-number">1.</span> <span class="nav-text">npm简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#npm常用命令"><span class="nav-number">2.</span> <span class="nav-text">npm常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cnpm简介"><span class="nav-number">3.</span> <span class="nav-text">cnpm简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cnpm安装"><span class="nav-number">4.</span> <span class="nav-text">cnpm安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#call和apply"><span class="nav-number">1.</span> <span class="nav-text">call和apply</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用原生对象的方法"><span class="nav-number">2.</span> <span class="nav-text">调用原生对象的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现继承"><span class="nav-number">3.</span> <span class="nav-text">实现继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bind的使用"><span class="nav-number">4.</span> <span class="nav-text">bind的使用</span></a></li></ol></div>
             
 
           </div>

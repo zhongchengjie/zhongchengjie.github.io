@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="npm,cnpm,nodejs," />
+  <meta name="keywords" content="undefined,js数据类型," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="npm简介npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。 npm常用命令1.安装插件：npm install  [-g] [–save-dev]  ：node插件名称。例：npm install gulp-less –save-dev -g：全局安装。将会安装在C:\Users\Administrator\AppDat">
-<meta name="keywords" content="npm,cnpm,nodejs">
+<meta name="description" content="类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 = new Object();var a6 = null;var a7 = NaN;var">
+<meta name="keywords" content="undefined,js数据类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm介绍">
-<meta property="og:url" content="http://yoursite.com/2018/06/21/npm/index.html">
+<meta property="og:title" content="js中的undefined与null">
+<meta property="og:url" content="http://yoursite.com/2018/06/26/null/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="npm简介npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。 npm常用命令1.安装插件：npm install  [-g] [–save-dev]  ：node插件名称。例：npm install gulp-less –save-dev -g：全局安装。将会安装在C:\Users\Administrator\AppDat">
+<meta property="og:description" content="类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 = new Object();var a6 = null;var a7 = NaN;var">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-21T03:24:33.209Z">
+<meta property="og:updated_time" content="2018-06-26T14:49:57.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm介绍">
-<meta name="twitter:description" content="npm简介npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。 npm常用命令1.安装插件：npm install  [-g] [–save-dev]  ：node插件名称。例：npm install gulp-less –save-dev -g：全局安装。将会安装在C:\Users\Administrator\AppDat">
+<meta name="twitter:title" content="js中的undefined与null">
+<meta name="twitter:description" content="类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 = new Object();var a6 = null;var a7 = NaN;var">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/21/npm/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/26/null/"/>
 
 
 
 
 
-  <title>npm介绍 | Hexo</title>
+  <title>js中的undefined与null | Hexo</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/21/npm/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/null/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WWW">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">npm介绍</h1>
+          <h1 class="post-title" itemprop="name headline">js中的undefined与null</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T10:53:45+08:00">
-                2018-06-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T22:46:54+08:00">
+                2018-06-26
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">nodejs</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -342,25 +342,15 @@
       
 
       
-        <h4 id="npm简介"><a href="#npm简介" class="headerlink" title="npm简介"></a>npm简介</h4><p>npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。</p>
-<h4 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h4><p>1.安装插件：<strong>npm install <name> [-g] [–save-dev]</name></strong></p>
+        <h5 id="类型分析"><a href="#类型分析" class="headerlink" title="类型分析"></a>类型分析</h5><p>js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1;</span><br><span class="line"><span class="keyword">var</span> a2 = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> a3 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> a4 = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">var</span> a5 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> a6 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> a7 = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">var</span> a8 = <span class="literal">undefined</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> a);   <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a1);  <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a2);  <span class="comment">//显示"boolean"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a3);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a4);  <span class="comment">//显示"string"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a5);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a6);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a7);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a8);  <span class="comment">//显示"undefined"</span></span><br></pre></td></tr></table></figure></p>
+<p>从上面的代码中可以看出<strong>未定义的值和定义未赋值的为undefined</strong>，null是一种特殊的object,NaN是一种特殊的number。</p>
+<h5 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1;  <span class="comment">//a1的值为undefined</span></span><br><span class="line"><span class="keyword">var</span> a2 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> a3 = <span class="literal">NaN</span>;</span><br><span class="line">alert(a1 == a2);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a1 != a2);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a1 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a1 != a3);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a2 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a2 != a3);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a3 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a3 != a3);  <span class="comment">//显示"true"</span></span><br></pre></td></tr></table></figure>
+<p>从上面的代码可以得出结论：</p>
 <ul>
-<li><name>：node插件名称。例：npm install gulp-less –save-dev</name></li>
-<li>-g：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用。</li>
-<li>–save：将保存配置信息至package.json（package.json是nodejs项目配置文件）</li>
-<li><p>-dev：保存至package.json的devDependencies（开发环境）节点，不指定-dev将保存至dependencies（生产环境）节点。</p>
-<p>为什么要保存至package.json？<strong>因为node插件包相对来说非常庞大，所以不加入版本管理，将配置信息写入package.json并将其加入版本管理，其他开发者对应下载即可（命令提示符执行npm install，则会根据package.json下载所有需要的包，npm install –production只下载dependencies节点的包）</strong></p>
-</li>
+<li><strong>undefined与null是相等；</strong></li>
+<li><strong>NaN与任何值都不相等，与自己也不相等。</strong></li>
 </ul>
-<p>2.卸载插件：<strong>npm uninstall <name> [-g] [–save-dev]</name></strong></p>
-<p>3.卸载全部插件：先安装rimraf：<strong>npm install rimraf -g</strong> &nbsp;&nbsp;用法：<strong>rimraf node_modules</strong></p>
-<p>4.更新插件：<strong>npm update <name> [-g] [–save-dev]</name></strong></p>
-<p>5.更新全部插件：<strong>npm update [–save-dev]</strong></p>
-<p>6.查看已安装的插件：<strong>npm list</strong></p>
-<p><strong>devDependencies节点下的模块是我们在开发时需要用的，比如项目中使用的gulp，压缩css、js的模块。这些模块在我们的项目部署后是不需要的，所以我们可以使用 -save-dev 的形式安装。像 express 这些模块是项目运行必备的，应该安装在 dependencies 节点下，所以我们应该使用 -save 的形式安装。</strong></p>
-<h4 id="cnpm简介"><a href="#cnpm简介" class="headerlink" title="cnpm简介"></a>cnpm简介</h4><p>因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常。<strong>cnpm是一个完整npmjs.org镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。</strong></p>
-<h4 id="cnpm安装"><a href="#cnpm安装" class="headerlink" title="cnpm安装"></a>cnpm安装</h4><p>安装命令：<strong>npm install cnpm -g –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></strong></p>
-<p>检查是否安装成功：<strong>cnpm -v</strong></p>
+<h5 id="undefined判断"><a href="#undefined判断" class="headerlink" title="undefined判断"></a>undefined判断</h5><p>用 === 运算或typeof来测试某个值是否是未定义的。<strong>undefined表示一个未声明的变量，或已声明但没有赋值的变量，或一个并不存在的对象属性</strong>。在本例中，我们将检测两个变量中未定义的一个：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t1=<span class="string">""</span></span><br><span class="line"><span class="keyword">var</span> t2</span><br><span class="line"><span class="keyword">if</span> (t1===<span class="literal">undefined</span>) &#123;<span class="built_in">document</span>.write(<span class="string">"t1 is undefined"</span>)&#125;</span><br><span class="line"><span class="keyword">if</span> (t2===<span class="literal">undefined</span>&amp;&amp;<span class="keyword">typeof</span>(t2)==<span class="string">"undefined"</span>) &#123;<span class="built_in">document</span>.write(<span class="string">"t2 is undefined"</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出：t2 is undefined</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -378,11 +368,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/npm/" rel="tag"># npm</a>
+            <a href="/tags/undefined/" rel="tag"># undefined</a>
           
-            <a href="/tags/cnpm/" rel="tag"># cnpm</a>
-          
-            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+            <a href="/tags/js数据类型/" rel="tag"># js数据类型</a>
           
         </div>
       
@@ -395,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/20/flex/" rel="next" title="flex">
-                <i class="fa fa-chevron-left"></i> flex
+              <a href="/2018/06/26/bind/" rel="next" title="call、apply和bind使用">
+                <i class="fa fa-chevron-left"></i> call、apply和bind使用
               </a>
             
           </div>
@@ -404,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/21/gulp/" rel="prev" title="gulp入门">
-                gulp入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#npm简介"><span class="nav-number">1.</span> <span class="nav-text">npm简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#npm常用命令"><span class="nav-number">2.</span> <span class="nav-text">npm常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cnpm简介"><span class="nav-number">3.</span> <span class="nav-text">cnpm简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cnpm安装"><span class="nav-number">4.</span> <span class="nav-text">cnpm安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#类型分析"><span class="nav-number">1.</span> <span class="nav-text">类型分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#比较运算"><span class="nav-number">2.</span> <span class="nav-text">比较运算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined判断"><span class="nav-number">3.</span> <span class="nav-text">undefined判断</span></a></li></ol></div>
             
 
           </div>
