@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 = new Object();var a6 = null;var a7 = NaN;var">
+<meta name="description" content="参考文章：js判断undefined类型,undefined,null, 的区别详细解析 类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 =">
 <meta name="keywords" content="undefined,js数据类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js中的undefined与null">
 <meta property="og:url" content="http://yoursite.com/2018/06/26/null/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 = new Object();var a6 = null;var a7 = NaN;var">
+<meta property="og:site_name" content="Web Front-End">
+<meta property="og:description" content="参考文章：js判断undefined类型,undefined,null, 的区别详细解析 类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-26T14:49:57.363Z">
+<meta property="og:updated_time" content="2018-06-26T16:10:00.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js中的undefined与null">
-<meta name="twitter:description" content="类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 = new Object();var a6 = null;var a7 = NaN;var">
+<meta name="twitter:description" content="参考文章：js判断undefined类型,undefined,null, 的区别详细解析 类型分析js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。1234567891011121314151617var a1;var a2 = true;var a3 = 1;var a4 = &quot;Hello&quot;;var a5 =">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>js中的undefined与null | Hexo</title>
+  <title>js中的undefined与null | Web Front-End</title>
   
 
 
@@ -156,7 +156,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Web Front-End</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -262,7 +262,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Web Front-End">
     </span>
 
     
@@ -342,7 +342,8 @@
       
 
       
-        <h5 id="类型分析"><a href="#类型分析" class="headerlink" title="类型分析"></a>类型分析</h5><p>js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1;</span><br><span class="line"><span class="keyword">var</span> a2 = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> a3 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> a4 = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">var</span> a5 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> a6 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> a7 = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">var</span> a8 = <span class="literal">undefined</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> a);   <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a1);  <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a2);  <span class="comment">//显示"boolean"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a3);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a4);  <span class="comment">//显示"string"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a5);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a6);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a7);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a8);  <span class="comment">//显示"undefined"</span></span><br></pre></td></tr></table></figure></p>
+        <p>参考文章：<a href="https://www.jb51.net/article/44472.htm" target="_blank" rel="noopener">js判断undefined类型,undefined,null, 的区别详细解析</a></p>
+<h5 id="类型分析"><a href="#类型分析" class="headerlink" title="类型分析"></a>类型分析</h5><p>js中的数据类型有undefined,boolean,number,string,object等5种，前4种为原始类型，第5种为引用类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1;</span><br><span class="line"><span class="keyword">var</span> a2 = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> a3 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> a4 = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">var</span> a5 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> a6 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> a7 = <span class="literal">NaN</span>;</span><br><span class="line"><span class="keyword">var</span> a8 = <span class="literal">undefined</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> a);   <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a1);  <span class="comment">//显示"undefined"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a2);  <span class="comment">//显示"boolean"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a3);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a4);  <span class="comment">//显示"string"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a5);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a6);  <span class="comment">//显示"object"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a7);  <span class="comment">//显示"number"</span></span><br><span class="line">alert(<span class="keyword">typeof</span> a8);  <span class="comment">//显示"undefined"</span></span><br></pre></td></tr></table></figure></p>
 <p>从上面的代码中可以看出<strong>未定义的值和定义未赋值的为undefined</strong>，null是一种特殊的object,NaN是一种特殊的number。</p>
 <h5 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1;  <span class="comment">//a1的值为undefined</span></span><br><span class="line"><span class="keyword">var</span> a2 = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> a3 = <span class="literal">NaN</span>;</span><br><span class="line">alert(a1 == a2);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a1 != a2);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a1 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a1 != a3);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a2 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a2 != a3);  <span class="comment">//显示"true"</span></span><br><span class="line">alert(a3 == a3);  <span class="comment">//显示"false"</span></span><br><span class="line">alert(a3 != a3);  <span class="comment">//显示"true"</span></span><br></pre></td></tr></table></figure>
 <p>从上面的代码可以得出结论：</p>
@@ -392,6 +393,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/27/javascript/" rel="prev" title="javascript知识整理-基础项">
+                javascript知识整理-基础项 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -472,7 +477,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
