@@ -1,10 +1,11 @@
 ---
-title: flex
-date: 2018-06-20 12:12:11
+title: flex布局
+date: 2018-03-20 12:12:11
 tags:
   - html/css
   - flex
   - 页面布局
+categories: html/css
 ---
 
 ### flex布局
